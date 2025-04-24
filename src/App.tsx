@@ -1,13 +1,11 @@
+import { BrowserRouter } from 'react-router-dom'
+import Routers from './Routers';
+
 function App() {
   return (
-    <>
-      <main>
-        items main
-      </main>
-      <footer>
-        items footer
-      </footer>
-    </>
+    <BrowserRouter>
+      <Routers />
+    </BrowserRouter>
   )
 }
 
