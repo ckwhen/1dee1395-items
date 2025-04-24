@@ -5,11 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:server": "json-server -p 3001 server/db.json",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "gen-data": "node scripts/gen-data.cjs"
   },
   "dependencies": {
+    "json-server": "1.0.0-beta.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
