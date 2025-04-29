@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "license": "Apache-2.0",
   "scripts": {
     "dev": "concurrently 'vite' 'json-server -p 3001 server/db.json'",
     "build": "tsc -b && vite build",
