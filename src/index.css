@@ -8,3 +8,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@theme {
+  --color-darkblue-100: oklch(0.63 0.0469 235.93);
+  --color-darkblue-200: oklch(0.52 0.0585 234.05);
+  --color-darkblue-300: oklch(0.42 0.0634 236.43);
+  --color-darkblue-400: oklch(0.33 0.0611 239.1);
+  --color-darkblue-500: oklch(0.24 0.0515 239.47);
+}

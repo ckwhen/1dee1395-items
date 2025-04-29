@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { randomUUID } = require('crypto');
 
 const CATEGORY_PARAMS_TYPE = 0;
 const INSTOCK_PARAMS_TYPE = 1;
@@ -23,6 +24,7 @@ const groupBy = (arr, criteria) => arr.reduce((obj, item) => {
 //   items: [ { ... }, ... ],
 //   params: [
 //     {
+//       id,
 //       label,
 //       value,
 //       type
@@ -36,7 +38,7 @@ function generateData(filePath, output) {
       return console.error(err);
     }
 
-    const items = JSON.parse(_items);
+    const items = JSON.parse(_items).map(item => ({ ...item, id: randomUUID() }));
     const categories = groupBy(items, 'category');
 
     const data = {};
@@ -46,6 +48,7 @@ function generateData(filePath, output) {
 
     Object.keys(categories).sort().forEach((category) => {
       data.params.push({
+        id: randomUUID(),
         label: category,
         value: category,
         type: CATEGORY_PARAMS_TYPE,
@@ -54,12 +57,14 @@ function generateData(filePath, output) {
 
     data.params.push(
       {
-        label: 'in stock',
+        id: randomUUID(),
+        label: '有庫存',
         value: 1,
         type: INSTOCK_PARAMS_TYPE,
       },
       {
-        label: 'out of stock',
+        id: randomUUID(),
+        label: '無庫存',
         value: 0,
         type: INSTOCK_PARAMS_TYPE,
       }
@@ -70,7 +75,7 @@ function generateData(filePath, output) {
         console.error(err);
       }
       console.log('Generate Data to server...');
-    })
+    });
   })
 }
 
