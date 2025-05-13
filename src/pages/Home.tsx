@@ -259,7 +259,7 @@ function Home() {
         {isPageLoading && <PageLoadingIcon />}
         {renderFilter()}
       </div>
-      {isTablet ? renderList() : renderTable()}
+      {isTablet ? items.length > 0 && renderList() : renderTable()}
     </>
   )
 }
