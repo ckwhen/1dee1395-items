@@ -2,6 +2,12 @@
 
 > 商品搜尋與列表展示
 
+## 專案展示
+
+桌機版 | 手機版
+:--:|:--:
+![Desktop](./public/desktop.jpg) | ![Mobile](./public/mobile.jpg)
+
 ## 技術規劃
 
 | 項目         | 技術                           |
